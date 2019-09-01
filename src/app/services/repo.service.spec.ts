@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { RepoService } from './user.service';
+import { RepoService } from './repo.service';
 
 describe('RepoService', () => {
   beforeEach(() => {
