@@ -1,0 +1,34 @@
+
+<div class="jumbotron">
+    <div class="container">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div *ngIf="repodetail" class="repo_detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+                <form class="needs-validation" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <input type="text" formControlName="repoName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.repoName.errors }">
+                        <div *ngIf="submitted && f.repoName.errors" class="invalid-feedback">
+                            <div *ngIf="f.repoName.errors.required">repo name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Description</label>
+                      <textarea formControlName="description" class="form-control" rows="3" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                          <div *ngIf="f.description.errors.required">Description is required</div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mb-2">Save</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div> <!-- /container -->

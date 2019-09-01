@@ -1,0 +1,25 @@
+
+<div class="jumbotron">
+    <div class="container">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div *ngIf="repodetail" class="repo_detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="repo_detail_layout">
+                  <h4>{{repodetail.name}}</h4>
+                  <p>{{repodetail.description}}</p>
+                  <p>Owner : {{repodetail.owner.login}}</p>
+                  <p>Forks : {{repodetail.forks}}</p>
+                  <p>Open Issues : {{repodetail.open_issues}}</p>
+                  <a href="javascript:;" class="btn btn-primary" role="button" (click)="editrepo(repodetail.name)">Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div> <!-- /container -->

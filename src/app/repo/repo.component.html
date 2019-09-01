@@ -1,0 +1,28 @@
+
+<div class="jumbotron">
+    <div class="container">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div *ngIf="repo" class="repo_list">
+        <div class="container">
+          <div class="row flex-column">
+              <div *ngFor="let item of repo" class="repo_row">
+                <a class="flex-column flex-md-row d-flex justify-content-between" (click)="repodetail(item.name,item.owner.login)">
+                    <div class="flex-column d-flex justify-content-start">
+                        <h4>{{item.name}}</h4>
+                        <p>{{item.description}}</p>
+                        <p *ngIf="item.license != null">{{item.license.name}}</p>
+                    </div>
+                    <div class="flex-column d-flex align-items-end">
+                        <p> {{item.updated_at | amLocale:'en' | amDateFormat:'MMMM Do YYYY, h:mm a'}} </p>
+                    </div>
+                </a>
+              </div>
+          </div>
+
+        </div>
+    </div>
+
+  </div> <!-- /container -->

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.repo_list{border: 1px solid #999; border-radius: 5px; color: #333;}
+.repo_row{ padding: 10px; border-top: 1px solid #999; transition: 0.3s ease;}
+.repo_row a{ cursor: pointer;}
+.repo_row:first-child{ border-top: none;}
+.repo_detail_layout h4{ margin-bottom: 20px;}
+.repo_detail_layout p{ margin-bottom: 10px;}
+.repo_row:hover{  background: #eee;}
